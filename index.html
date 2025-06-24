@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savings Calculator</title>
+
+  <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/images/site.webmanifest" />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/form.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+  <main class="container">
+    <section class="calculator">
+      <h1>Savings Calculator</h1>
+      <p class="subtitle">How much could I have if I save regularly?</p>
+
+      <label for="savings-now" class="input-label">How much do you have now?</label>
+      <div class="input-group"><span>£</span><input type="number" value="25000" /></div>
+
+      <label class="input-label">How much will you save each month?</label>
+      <div class="input-group"><span>£</span><input type="number" value="200" /></div>
+
+      <label class="range-label">How long will you save for?</label>
+
+      <div class="range-group">
+        <div class="years-container">
+          <div class="range-label-row">
+            <span>Years</span>
+            <span>20</span>
+          </div>
+          <input type="range" value="20" />
+        </div>
+
+        <div class="range-label-row">
+          <span>Months</span>
+          <span>0</span>
+        </div>
+        <input type="range" value="0" />
+      </div>
+
+      <div class="interest-rate-container">
+        <div class="range-label-row">
+          <span class="interest-rate-text">What's the interest rate?</span>
+          <span>4.7%</span>
+        </div>
+        <input type="range" value="0" />
+      </div>
+
+      <label>How much tax do you pay on interest?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="tax" checked> None</label>
+        <label><input type="radio" name="tax"> Basic rate</label>
+        <label><input type="radio" name="tax"> Higher rate</label>
+        <label><input type="radio" name="tax"> Additional rate</label>
+      </div>
+
+      <button class="calculate-button">Calculate</button>
+    </section>
+
+    <section class="results">
+      <img src="images/piggybank.png" alt="Piggy bank placeholder" />
+      <div class="result-amount">£100,000</div>
+      <p>You'd have <strong>£100,000</strong> in total after saving <strong>£200</strong> a month for <strong>20
+          years</strong></p>
+    </section>
+  </main>
+
+  <footer class="footer">Made by <a href="https://larrieknights.com">Larrie</a></footer>
+</body>
+
+</html>

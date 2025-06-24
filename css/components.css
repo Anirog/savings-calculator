@@ -1,0 +1,48 @@
+.calculate-button {
+  width: 100%;
+  background: #fdbb4b;
+  border: none;
+  padding: 1em 2em;
+  border-radius: 2em;
+  font-size: 1em;
+  margin-top: 2em;
+  cursor: pointer;
+}
+
+.calculate-button:hover {
+  background: #FABD6B;
+}
+
+.results {
+  text-align: center;
+}
+
+.results img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 31px;
+}
+
+.result-amount {
+  font-size: 2em;
+  font-weight: 700;
+  color: #fdbb4b;
+  margin-bottom: 35px;
+}
+
+.footer {
+  color: #888888;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 1em 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #b98b2d;
+  transition: all 150ms ease-in-out;
+}
+
+.footer a:hover {
+  color: #888888;
+}

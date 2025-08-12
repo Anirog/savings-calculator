@@ -72,20 +72,49 @@ document.addEventListener('DOMContentLoaded', function () {
       total = monthly * totalMonths;
     }
 
-  // Update results
-  resultAmount.textContent = formatCurrency(total);
-  const yearLabel = years === 1 ? 'year' : 'years';
-  const monthLabel = months === 1 ? 'month' : 'months';
-  let durationText = '';
-  if (years > 0 && months > 0) {
-    durationText = `${years} ${yearLabel} and ${months} ${monthLabel}`;
-  } else if (years > 0) {
-    durationText = `${years} ${yearLabel}`;
-  } else if (months > 0) {
-    durationText = `${months} ${monthLabel}`;
-  } else {
-    durationText = '0 years';
-  }
-  resultText.innerHTML = `You'd have <strong>${formatCurrency(total)}</strong> in total after saving <strong>${formatCurrency(monthly)}</strong> a month for <strong>${durationText}</strong>`;
+    // Calculate total principal (amount saved without interest)
+    const principal = monthly * totalMonths;
+
+    // Calculate total interest earned
+    const totalInterest = total - principal;
+
+    // Get selected tax rate
+    const taxRadio = document.querySelector('.radio-group input[name="tax"]:checked');
+    let taxType = taxRadio ? taxRadio.parentElement.textContent.trim() : 'None';
+    let taxDeducted = 0;
+    if (taxType === 'Basic rate') {
+      // First £1,000 interest tax free, rest taxed at 20%
+      if (totalInterest > 1000) {
+        taxDeducted = (totalInterest - 1000) * 0.20;
+      }
+    } else if (taxType === 'Higher rate') {
+      // First £500 interest tax free, rest taxed at 40%
+      if (totalInterest > 500) {
+        taxDeducted = (totalInterest - 500) * 0.40;
+      }
+    } else if (taxType === 'Additional rate') {
+      // All interest taxed at 45%
+      taxDeducted = totalInterest * 0.45;
+    }
+    // None: no deduction
+
+    // Deduct tax from total
+    const totalAfterTax = total - taxDeducted;
+
+    // Update results
+    resultAmount.textContent = formatCurrency(totalAfterTax);
+    const yearLabel = years === 1 ? 'year' : 'years';
+    const monthLabel = months === 1 ? 'month' : 'months';
+    let durationText = '';
+    if (years > 0 && months > 0) {
+      durationText = `${years} ${yearLabel} and ${months} ${monthLabel}`;
+    } else if (years > 0) {
+      durationText = `${years} ${yearLabel}`;
+    } else if (months > 0) {
+      durationText = `${months} ${monthLabel}`;
+    } else {
+      durationText = '0 years';
+    }
+    resultText.innerHTML = `You'd have <strong>${formatCurrency(totalAfterTax)}</strong> in total after saving <strong>${formatCurrency(monthly)}</strong> a month for <strong>${durationText}</strong>`;
   });
 });

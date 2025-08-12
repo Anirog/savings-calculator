@@ -75,6 +75,17 @@ document.addEventListener('DOMContentLoaded', function () {
   // Update results
   resultAmount.textContent = formatCurrency(total);
   const yearLabel = years === 1 ? 'year' : 'years';
-  resultText.innerHTML = `You'd have <strong>${formatCurrency(total)}</strong> in total after saving <strong>${formatCurrency(monthly)}</strong> a month for <strong>${years} ${yearLabel}</strong>`;
+  const monthLabel = months === 1 ? 'month' : 'months';
+  let durationText = '';
+  if (years > 0 && months > 0) {
+    durationText = `${years} ${yearLabel} and ${months} ${monthLabel}`;
+  } else if (years > 0) {
+    durationText = `${years} ${yearLabel}`;
+  } else if (months > 0) {
+    durationText = `${months} ${monthLabel}`;
+  } else {
+    durationText = '0 years';
+  }
+  resultText.innerHTML = `You'd have <strong>${formatCurrency(total)}</strong> in total after saving <strong>${formatCurrency(monthly)}</strong> a month for <strong>${durationText}</strong>`;
   });
 });

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   yearsSlider.min = 0;
   yearsSlider.max = 50;
   monthsSlider.min = 0;
-  monthsSlider.max = 12;
+  monthsSlider.max = 11;
   interestSlider.min = 0;
   interestSlider.max = 50;
 

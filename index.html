@@ -12,12 +12,16 @@
 
   <link rel="canonical" href="https://anirog.github.io/savings-calculator/" />
 
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/typography.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/form.css" />
   <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/tooltip.css" />
 
   <!-- Google Fonts -->
 
@@ -91,7 +95,20 @@
         <input type="range" value="0" />
       </div>
 
-      <label>How much tax do you pay on interest?</label>
+      <label>How much tax do you pay on interest?
+        <span class="tooltip-container">
+          <i class="ph ph-info"></i>
+          <div class="tooltip-popover" role="tooltip">
+            Based on your annual income, your tax band for savings interest is:
+            <ul>
+              <li><strong>None:</strong> Your income is below the Personal Allowance, or your interest is within the tax-free Personal Savings Allowance.</li>
+              <li><strong>Basic Rate (20%):</strong> Your income is between £12,571 and £50,270. You get a £1,000 tax-free Personal Savings Allowance.</li>
+              <li><strong>Higher Rate (40%):</strong> Your income is between £50,271 and £125,140. You get a £500 tax-free Personal Savings Allowance.</li>
+              <li><strong>Additional Rate (45%):</strong> Your income is over £125,140. There is no tax-free allowance.</li>
+            </ul>
+          </div>
+        </span>
+      </label>
       <div class="radio-group">
         <label><input type="radio" name="tax" checked> None</label>
         <label><input type="radio" name="tax"> Basic rate</label>
@@ -113,6 +130,7 @@
   <footer class="footer">Made by <a href="https://larrieknights.com" rel="author noopener">Larrie</a></footer>
 
   <script src="js/app.js"></script>
+  <script src="js/tooltip.js"></script>
 
 </body>
 

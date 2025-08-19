@@ -1,0 +1,50 @@
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-container .ph-info {
+  cursor: pointer;
+  color: #d18c00;
+  font-size: 1.1em;
+  vertical-align: middle;
+  margin-left: 0.3em;
+}
+
+.tooltip-popover {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translateX(-50%);
+  min-width: 320px;
+  max-width: 360px;
+  background: #fffbe8;
+  color: #333;
+  border: 1px solid #fdbb4b;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 1em 1.2em;
+  z-index: 100;
+  font-size: 0.98em;
+  line-height: 1.5;
+}
+
+.tooltip-popover ul {
+  margin: 0.7em 0 0 1.1em;
+  padding: 0;
+  list-style: disc;
+}
+
+.tooltip-popover li {
+  margin-bottom: 0.5em;
+}
+
+.tooltip-popover li:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-popover[aria-hidden="false"],
+.tooltip-popover.active {
+  display: block;
+}

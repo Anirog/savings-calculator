@@ -1,3 +1,20 @@
+label > .tooltip-container {
+  margin-left: 0.5em;
+}
+
+label .tooltip-container {
+  /* Ensure the icon stays inline with the label text */
+  display: inline-flex;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  /* Optional: add gap for spacing */
+  gap: 0.3em;
+}
+
 label {
   display: block;
   margin-top: 1.5em;

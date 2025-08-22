@@ -229,7 +229,7 @@ input[type="radio"]:checked::before {
   align-items: center;
 }
 
-.interest-number-input {
+input.interest-number-input {
   width: 70px; /* Increase from 60px to provide more space */
   text-align: right;
   padding-right: 8px; /* More padding for better text visibility */
@@ -246,7 +246,7 @@ input[type="radio"]:checked::before {
 
 /* Add responsive styles for mobile */
 @media (max-width: 480px) {
-  .interest-number-input {
+  input.interest-number-input {
     width: 80px;     /* Even wider on small screens */
     font-size: 1.1em; /* Larger text on mobile */
   }

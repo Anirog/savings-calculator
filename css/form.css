@@ -244,3 +244,33 @@ input[type="number"]::-webkit-outer-spin-button {
 .years-container {
   margin-bottom: 16px;
 }
+
+.interest-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.interest-number-input {
+  width: 60px;
+  text-align: right;
+  padding-right: 5px;
+  margin-right: 2px;
+  height: 30px;
+  border: 1px solid #C3C7D5;
+  border-radius: 4px;
+  font-family: Verdana, sans-serif;
+  font-size: 1em;
+  color: #4A4A4A;
+}
+
+/* Make sure the interest input doesn't have spinners */
+.interest-number-input::-webkit-inner-spin-button,
+.interest-number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.interest-number-input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

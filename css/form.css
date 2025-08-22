@@ -250,27 +250,25 @@ input[type="number"]::-webkit-outer-spin-button {
   align-items: center;
 }
 
-.interest-number-input {
-  width: 60px;
+input.interest-number-input {
+  width: 70px; /* Increase from 60px to provide more space */
   text-align: right;
-  padding-right: 5px;
+  padding-right: 8px; /* More padding for better text visibility */
+  padding-left: 5px;  /* Add left padding */
   margin-right: 2px;
-  height: 30px;
+  height: 34px;      /* Slightly taller for better touch target */
   border: 1px solid #C3C7D5;
   border-radius: 4px;
   font-family: Verdana, sans-serif;
   font-size: 1em;
   color: #4A4A4A;
+  font-weight: 500;  /* Make text slightly bolder */
 }
 
-/* Make sure the interest input doesn't have spinners */
-.interest-number-input::-webkit-inner-spin-button,
-.interest-number-input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.interest-number-input {
-  -moz-appearance: textfield;
-  appearance: textfield;
+/* Add responsive styles for mobile */
+@media (max-width: 480px) {
+  input.interest-number-input {
+    width: 80px;     /* Even wider on small screens */
+    font-size: 1.1em; /* Larger text on mobile */
+  }
 }

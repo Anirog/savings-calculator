@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   yearsValue.textContent = '0';
   monthsSlider.value = 0;
   monthsValue.textContent = '0';
-  interestSlider.value = 0; // For 4.7%
+  interestSlider.value = 0;
   interestInput.value = 0;
   resultAmount.textContent = '£0.00';
   resultText.innerHTML = "You'd have <strong>£0.00</strong> in total after saving <strong>£0.00</strong> a month for <strong>0 years</strong>";
@@ -30,8 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
   yearsSlider.max = 50;
   monthsSlider.min = 0;
   monthsSlider.max = 11;
+  
+  // Fix the interest slider range - use 0-500 for 0-50.0%
   interestSlider.min = 0;
-  interestSlider.max = 50;
+  interestSlider.max = 500;  // This allows values up to 50.0%
+  interestSlider.step = 1;
+  interestInput.min = 0;
+  interestInput.max = 50;
+  interestInput.step = 0.1;
 
   // Update display on slider/input change
   amountInput.addEventListener('input', function () {
@@ -46,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     monthsValue.textContent = monthsSlider.value;
   });
 
-  // Synchronize interest slider and number input (slider works in tenths for precision)
+  // Synchronize interest slider and number input
   interestSlider.addEventListener('input', function() {
     const value = parseFloat(interestSlider.value) / 10;
     interestInput.value = value.toFixed(1);

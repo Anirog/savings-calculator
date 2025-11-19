@@ -1,15 +1,15 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Savings Calculator - Turn Small Steps Into Big Savings",
+  "short_name": "Savings Calculator",
   "icons": [
     {
-      "src": "https://anirog.github.io/savings-calculator/images/web-app-manifest-192x192.png",
+      "src": "https://files.larrieknights.com/savings-calculator/images/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "https://anirog.github.io/savings-calculator/images/web-app-manifest-512x512.png",
+      "src": "https://files.larrieknights.com/savings-calculator/images/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

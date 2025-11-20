@@ -5,9 +5,10 @@
   const xButton = document.getElementById('share-x');
   const emailButton = document.getElementById('share-email');
 
-  const shareUrl = 'https://files.larrieknights.com/savings-calculator';
+  const shareUrl = window.location.href;
   const shareMessage =
-    'Savings Calculator - Turn Small Steps Into Big Savings. A simple, free tool to help you estimate how much you could save over time. Adjust the amount, interest rate, and duration to see your savings grow. https://files.larrieknights.com/savings-calculator';
+    'Savings Calculator - Turn Small Steps Into Big Savings. A simple, free tool to help you estimate how much you could save over time. Adjust the amount, interest rate, and duration to see your savings grow. ' +
+    shareUrl;
 
   if (!shareToggle || !shareOptions) {
     return;

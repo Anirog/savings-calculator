@@ -1,6 +1,6 @@
 # Savings Calculator
 
-A simple, free web-based tool to help users estimate how much they could save over time with compound interest calculations and UK tax considerations.
+A simple, web-based tool to help users estimate how much they could save over time with compound interest calculations and UK tax considerations.
 
 ## Project Overview
 
